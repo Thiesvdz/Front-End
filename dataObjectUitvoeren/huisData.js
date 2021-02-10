@@ -104,27 +104,27 @@ const energieData = [
     tempBinnen: 20,
     tempGewenst: 20,
     lichtKamer: true,
-    lichtBuiten: true,
+    lichtBuiten: false
 },{
     tijd: Date.parse('8 Feb 2021 15:00'),
     tempBuiten: -4,
     tempBinnen: 20,
     tempGewenst: 20,
     lichtKamer: true,
-    lichtBuiten: true,
+    lichtBuiten: false
 },{
     tijd: Date.parse('8 Feb 2021 15:10'),
     tempBuiten: -4,
     tempBinnen: 19,
     tempGewenst: 20,
     lichtKamer: true,
-    lichtBuiten: true,
+    lichtBuiten: false
 },{
     tijd: Date.parse('8 Feb 2021 15:20'),
     tempBuiten: -5,
     tempBinnen: 20,
     tempGewenst: 20,
     lichtKamer: true,
-    lichtBuiten: true,
+    lichtBuiten: false
 },
 ]
