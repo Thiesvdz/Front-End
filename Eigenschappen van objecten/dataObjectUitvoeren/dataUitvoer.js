@@ -63,19 +63,19 @@ const uitvoeren = () => {
         html+= `<div>${obj.tempBinnen}&deg;C</div>`;
         html+= `<div>${obj.tempGewenst}&deg;C</div>`;
         if( obj.tempGewenst > obj.tempBinnen){
-            html+= `<div> <img class="icon" src="/Icons/vlam.svg" alt="CV aan"> </div>`;
+            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/vlam.svg" alt="CV aan"> </div>`;
         } else{
-            html+= `<div> <img class="icon" src="/Icons/vlamuit.svg" alt="CV uit"> </div>`;
+            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/vlamuit.svg" alt="CV uit"> </div>`;
         }
         if( obj.lichtKamer){
-            html+= `<div> <img class="icon" src="/Icons/lampAan.svg" alt="lamp aan"> </div>`;
+            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/lampAan.svg" alt="lamp aan"> </div>`;
         } else{
-            html+= `<div> <img class="icon" src="/Icons/lampUit.svg" alt="CV uit"> </div>`;
+            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/lampUit.svg" alt="CV uit"> </div>`;
         }
         if( obj.lichtBuiten){
-            html+= `<div> <img class="icon" src="/Icons/lampAan.svg" alt="lamp aan"> </div>`;
+            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/lampAan.svg" alt="lamp aan"> </div>`;
         } else{
-            html+= `<div> <img class="icon" src="/Icons/lampUit.svg" alt="CV uit"> </div>`;
+            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/lampUit.svg" alt="CV uit"> </div>`;
         }
         html += "</div>";
     });
