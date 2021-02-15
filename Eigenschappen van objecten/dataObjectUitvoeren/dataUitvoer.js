@@ -40,7 +40,7 @@ const maakDatum = (num) =>{
     let maand    = datum.getMonth();
     let jaar     = datum.getFullYear();
     let uren     = datum.getHours();
-    if (uren < 10) 
+    if (uren < 10)  
     {
         uren = '0' + uren
     }
