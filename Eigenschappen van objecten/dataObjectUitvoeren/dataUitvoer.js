@@ -1,5 +1,19 @@
 const uitvoer = document.getElementById('uitvoer');
 let dataObject; 
+const jsonKnop = document.getElementById('haalJSON');
+const urlJson = 'https://gist.githubusercontent.com/Theo-denBlanken/193d989a2aab328f847f4357e7171dc5/raw/1ca3b05253dee0dac348b9ded4ada8a64d97ff5e/huisDataa.json';
+jsonKnop.addEventListener('click', ()=>{
+    jsonKnop.style.display = 'none';
+    const vraagServ = new XMLHttpRequest();
+    vraagServ.onreadystatechange = () => {
+        if( vraagServ.readyState == 4 && vraagServ.status == 200){
+            dataObject = JSON.parse(vraagServ.responseText); 
+            uitvoeren();
+        }
+    }
+    vraagServ.open('GET', urlJson, true);
+    vraagServ.send();
+});
 
 const geefDagWeek = (num) => {
     switch (num) {
@@ -32,6 +46,9 @@ const maandNaam = (num) => {
 }
 
 const maakDatum = (num) =>{
+    if(typeof(num)== 'string'){
+        num = Date.parse(num);
+    }
     // zet de string van de js datum om in een betere vorm
     let datum = new Date(num);
 
@@ -63,19 +80,19 @@ const uitvoeren = () => {
         html+= `<div>${obj.tempBinnen}&deg;C</div>`;
         html+= `<div>${obj.tempGewenst}&deg;C</div>`;
         if( obj.tempGewenst > obj.tempBinnen){
-            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/vlam.svg" alt="CV aan"> </div>`;
+            html+= `<div> <img class="icon" src="../Icons/vlam.svg" alt="CV aan"> </div>`;
         } else{
-            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/vlamuit.svg" alt="CV uit"> </div>`;
+            html+= `<div> <img class="icon" src="../Icons/vlamUIt.svg" alt="CV uit"> </div>`;
         }
         if( obj.lichtKamer){
-            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/lampAan.svg" alt="lamp aan"> </div>`;
+            html+= `<div> <img class="icon" src="../Icons/lampAan.svg" alt="lamp aan"> </div>`;
         } else{
-            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/lampUit.svg" alt="CV uit"> </div>`;
+            html+= `<div> <img class="icon" src="../Icons/lampUIt.svg" alt="CV uit"> </div>`;
         }
         if( obj.lichtBuiten){
-            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/lampAan.svg" alt="lamp aan"> </div>`;
+            html+= `<div> <img class="icon" src="../Icons/lampAan.svg" alt="lamp aan"> </div>`;
         } else{
-            html+= `<div> <img class="icon" src="/Eigenschappen van objecten/Icons/lampUit.svg" alt="CV uit"> </div>`;
+            html+= `<div> <img class="icon" src="../Icons/lampUIt.svg" alt="CV uit"> </div>`;
         }
         html += "</div>";
     });
